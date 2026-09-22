@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Task Manager</title>
+</head>
+
+<body>
+
+<h1>Django Task Manager</h1>
+
+<h2>My DevOps Tasks</h2>
+
+<ul>
+{% for task in tasks %}
+    <li>
+        {% if task.completed %}
+            ✓ {{ task.title }}
+        {% else %}
+            ○ {{ task.title }}
+        {% endif %}
+    </li>
+{% empty %}
+    <li>No tasks yet</li>
+{% endfor %}
+</ul>
+
+<p>Version: 1.0</p>
+
+</body>
+</html>
